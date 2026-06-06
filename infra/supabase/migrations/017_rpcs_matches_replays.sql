@@ -132,7 +132,7 @@ as $$
     match_id,
     profile_id,
     placement,
-    final_card_count
+    deadly_card_count
   )
   values (
     p_match_id,
@@ -190,7 +190,7 @@ returns table (
   username varchar,
   avatar_key varchar,
   placement smallint,
-  final_card_count smallint
+  deadly_card_count smallint
 )
 language sql
 as $$
@@ -199,7 +199,7 @@ as $$
     p.username,
     p.avatar_key,
     mp.placement,
-    mp.final_card_count
+    mp.deadly_card_count
   from public.match_players mp
     inner join public.profiles p
       on p.id = mp.profile_id
